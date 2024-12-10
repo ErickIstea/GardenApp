@@ -21,7 +21,7 @@ class DetalleViewModel(
 
     fun ejecutar(intencion: DetalleIntencion) {
         when(intencion){
-            is DetalleIntencion.IrParaAtras -> cargarContenido()
+            is DetalleIntencion.IrParaAtras -> irParaAtras()
             is DetalleIntencion.CargarContenido -> cargarContenido()
         }
     }
