@@ -1,6 +1,7 @@
 package com.istea.mihoroscopo.presentacion.signos
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -77,7 +78,10 @@ fun SignosView (
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ListaDeSignosView(signos: List<Signo>, onSelect: (Signo)->Unit){
-    LazyColumn {
+    LazyColumn(
+        modifier = Modifier.padding(vertical = 15.dp),
+        verticalArrangement = Arrangement.spacedBy(15.dp)
+    ) {
         items(items = signos) {signo ->
             Card(
                 modifier = Modifier
@@ -95,7 +99,7 @@ fun ListaDeSignosView(signos: List<Signo>, onSelect: (Signo)->Unit){
                     verticalAlignment = Alignment.CenterVertically
                 ){
                     Image(
-                        painterResource(R.drawable.s001),
+                        painterResource(signo.ilustrationId),
                         contentDescription = "",
                         contentScale = ContentScale.Fit,
                         modifier = Modifier
@@ -122,7 +126,7 @@ fun ListaDeSignosView(signos: List<Signo>, onSelect: (Signo)->Unit){
                         Text(
                             modifier = Modifier.padding(10.dp),
                             style = MaterialTheme.typography.bodyMedium,
-                            text = "Esta descripcion esta harcodeada"
+                            text = signo.descripcion
                         )
                     }
                 }
