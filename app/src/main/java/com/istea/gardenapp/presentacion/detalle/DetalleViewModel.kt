@@ -33,14 +33,13 @@ class DetalleViewModel(
         uiState = DetalleEstado.Cargando
         viewModelScope.launch {
             try {
-                val planta = repositorio.getCuidados(plantaId = plantaId)
-                uiState = DetalleEstado.Resultado(cuidado = repositorio.cuidadoLirio)
+                val cuidado = repositorio.getCuidados(plantaId = plantaId) // corrijo punto 2
+                uiState = DetalleEstado.Resultado(cuidado = cuidado)
             } catch (e: Exception) {
                 uiState = DetalleEstado.Error(mensaje = "Error al cargar el contenido")
             }
         }
     }
-}
 
 
 class DetalleViewModelFactory(
