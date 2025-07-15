@@ -79,7 +79,9 @@ fun PlantasView (
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ListaDeSignosView(searchText:String, plantas: List<Planta>, onSearch: (String) -> Unit, onSelect: (Planta)->Unit){
+fun ListaDeSignosView(searchText:String, plantas: List<Planta>, onSearch: (String)
+-> Unit, onSelect: (Planta)->Unit)
+{
     LazyColumn {
         item {
             OutlinedTextField(
@@ -113,7 +115,7 @@ fun ListaDeSignosView(searchText:String, plantas: List<Planta>, onSearch: (Strin
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
-                        painterResource(R.drawable.i008),
+                        painterResource(planta.ilustrationId), //corrijo punto 1
                         contentDescription = planta.nombre,
                         contentScale = ContentScale.Fit,
                         modifier = Modifier
