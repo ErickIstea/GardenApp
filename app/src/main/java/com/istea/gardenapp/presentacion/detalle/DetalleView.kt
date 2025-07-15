@@ -53,7 +53,7 @@ fun DetalleView (
             TopAppBar(
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primaryContainer //corrijo punto 5
+                    titleContentColor = MaterialTheme.colorScheme.primary //corrijo punto 5
                 ),
                 title = { Text(text = "Cuidados") },
                 navigationIcon = {
